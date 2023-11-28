@@ -4,10 +4,16 @@
   box-sizing: border-box;
 }
 
+header {
+  margin: -60px;
+  margin-right: -40px;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  overflow: hidden; /*remove scroll*/
+  overflow: hidden;
+
   background: linear-gradient(
     90deg,
     rgba(6, 0, 255, 1) 0%,
@@ -25,26 +31,26 @@ h1 {
   align-self: flex-end;
   padding-top: 6rem;
   padding-right: 5rem;
-  font-family: "Secular One"; /*add import*/
+  font-family: "Secular One";
   font-size: 3.75rem;
   color: #ffffff;
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0.06em;
 }
-
 h2 {
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
   padding: 1rem 4.5rem 11rem 4em;
-  font-family: "Lora"; /*add import*/
+  font-family: "Lora";
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0.5em;
   color: #ffd029;
 }
+/* #region Planets */
 
 #solar-system {
   max-width: 100%;
@@ -61,12 +67,49 @@ h2 {
   cursor: pointer;
 }
 
+#solar-system button:hover {
+  transform: scale(1.6);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#solar-system button#mercury:hover,
+#solar-system button#venus:hover,
+#solar-system button#earth:hover,
+#solar-system button#mars:hover {
+  transform: scale(2); /* Adjust the hover scale value as needed */
+  animation: biggerPulse 1.5s infinite; /* Use a different animation name */
+}
+
+@keyframes biggerPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2); /* Adjust the hover scale value as needed */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 #sun {
   position: absolute;
   background-color: #ffd029;
   box-shadow: 0px 0px 250px rgba(255, 208, 41, 0.2);
-  height: 76.875rem;
-  width: 79.875rem;
+  height: 71.875rem;
+  width: 77.875rem;
   top: -17.625rem;
   left: -1180px;
   z-index: 2;
