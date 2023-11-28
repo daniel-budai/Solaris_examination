@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
   background: linear-gradient(
     90deg,
     rgba(6, 0, 255, 1) 0%,
@@ -172,4 +171,53 @@ h2 {
   height: 4.125rem;
   width: 4.125rem;
   background-color: #7a91a7;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(6, 0, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(6, 0, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(7, 6, 70, 1) 0%,
+    rgba(23, 22, 71, 1) 0%,
+    rgba(9, 7, 40, 1) 58%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  z-index: 2;
+  cursor: pointer;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#x {
+  position: absolute;
+  top: 3.125rem;
+  right: 4.375rem;
+  background-color: transparent;
+  border: none;
+  font-size: 4.375rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s; /* Add a smooth color transition */
+}
+
+#x:hover {
+  color: #ffd029;
 }
