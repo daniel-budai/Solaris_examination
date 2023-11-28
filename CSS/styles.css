@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: hidden; /*remove scroll*/
   background: linear-gradient(
     90deg,
     rgba(6, 0, 255, 1) 0%,
@@ -25,7 +25,7 @@ h1 {
   align-self: flex-end;
   padding-top: 6rem;
   padding-right: 5rem;
-  font-family: "Secular One";
+  font-family: "Secular One"; /*add import*/
   font-size: 3.75rem;
   color: #ffffff;
   font-weight: 400;
@@ -38,10 +38,95 @@ h2 {
   justify-content: flex-end;
   align-self: flex-end;
   padding: 1rem 4.5rem 11rem 4em;
-  font-family: "Lora";
+  font-family: "Lora"; /*add import*/
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0.5em;
   color: #ffd029;
+}
+
+#solar-system {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 6rem;
+}
+
+#solar-system button {
+  border-style: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#sun {
+  position: absolute;
+  background-color: #ffd029;
+  box-shadow: 0px 0px 250px rgba(255, 208, 41, 0.2);
+  height: 76.875rem;
+  width: 79.875rem;
+  top: -17.625rem;
+  left: -1180px;
+  z-index: 2;
+}
+
+#mercury {
+  height: 0.875rem;
+  width: 0.875rem;
+  background-color: #888888;
+}
+
+#venus {
+  height: 1.625rem;
+  width: 1.625rem;
+  background-color: #e7cdcd;
+}
+
+#earth {
+  height: 1.75rem;
+  width: 1.75rem;
+  background-color: #428ed4;
+}
+
+#mars {
+  height: 0.875rem;
+  width: 0.875rem;
+  background-color: #ef5f5f;
+}
+
+#jupiter {
+  height: 11.25rem;
+  width: 11.25rem;
+  background-color: #e29468;
+}
+
+#saturn {
+  height: 9rem;
+  width: 9rem;
+  background-color: #c7aa72;
+}
+
+#rings-of-saturn {
+  display: block;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(-30deg);
+  height: 5.5px;
+  width: 13.625rem;
+  border-radius: 50%;
+  margin: 0;
+  margin-left: -2.5rem;
+}
+
+#uranus {
+  height: 66px;
+  width: 66px;
+  background-color: #c9d4f1;
+}
+
+#neptune {
+  height: 4.125rem;
+  width: 4.125rem;
+  background-color: #7a91a7;
 }
