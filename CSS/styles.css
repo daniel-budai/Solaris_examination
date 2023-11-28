@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(6, 0, 255);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+h1 {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding-top: 6rem;
+  padding-right: 5rem;
+  font-size: 3.75rem;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.06em;
+}
+h2 {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding: 1rem 4.5rem 11rem 4em;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.5em;
+  color: #ffd029;
+}
