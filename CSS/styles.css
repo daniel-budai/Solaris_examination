@@ -8,7 +8,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: rgb(6, 0, 255);
   background: linear-gradient(
     90deg,
     rgba(6, 0, 255, 1) 0%,
@@ -19,6 +18,7 @@ body {
     rgba(2, 0, 36, 1) 100%
   );
 }
+
 h1 {
   display: flex;
   justify-content: flex-end;
@@ -32,6 +32,7 @@ h1 {
   line-height: 100%;
   letter-spacing: 0.06em;
 }
+
 h2 {
   display: flex;
   justify-content: flex-end;
