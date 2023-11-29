@@ -87,8 +87,8 @@ h2 {
 #solar-system button#venus:hover,
 #solar-system button#earth:hover,
 #solar-system button#mars:hover {
-  transform: scale(2); /* Adjust the hover scale value as needed */
-  animation: biggerPulse 1.5s infinite; /* Use a different animation name */
+  transform: scale(2);
+  animation: biggerPulse 1.5s infinite;
 }
 
 @keyframes biggerPulse {
@@ -96,7 +96,7 @@ h2 {
     transform: scale(1);
   }
   50% {
-    transform: scale(2); /* Adjust the hover scale value as needed */
+    transform: scale(2);
   }
   100% {
     transform: scale(1);
@@ -193,7 +193,6 @@ h2 {
     rgba(2, 0, 36, 1) 100%
   );
   z-index: 2;
-  cursor: pointer;
   animation: fadeIn 0.7s ease-in-out;
 }
 
@@ -215,7 +214,7 @@ h2 {
   font-size: 4.375rem;
   cursor: pointer;
   color: white;
-  transition: color 0.3s; /* Add a smooth color transition */
+  transition: color 0.3s;
 }
 
 #x:hover {
