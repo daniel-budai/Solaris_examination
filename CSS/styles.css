@@ -182,7 +182,6 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(6, 0, 255);
   background: linear-gradient(
     90deg,
     rgba(6, 0, 255, 1) 0%,
@@ -219,4 +218,38 @@ h2 {
 
 #x:hover {
   color: #ffd029;
+}
+
+#overlay-content {
+  max-width: 640px; /* Adjust the maximum width as needed */
+  margin: auto; /* Center the overlay */
+  transform: translateY(-80px);
+}
+
+#overlay-content h1 {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 60px;
+  line-height: 60px;
+  padding-top: 4rem;
+}
+
+#overlay-content h2#planet-name {
+  font-family: Lora;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px 31.4rem 1rem 0;
+}
+
+#planet-description {
+  color: white;
+  font-family: Roboto Condensed;
+  font-size: 18px;
+  line-height: 30.6px;
+  margin-top: 10px;
+}
+
+.line2 {
+  margin-top: 20px;
 }
