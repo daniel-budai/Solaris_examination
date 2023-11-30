@@ -19,12 +19,22 @@ const openOverlay = function (planet) {
   document.getElementById("latin-name").innerText = planet.name;
   document.getElementById("planet-name").innerText = planet.latinName;
   document.getElementById("planet-description").innerText = planet.desc;
-  document.getElementById("planet-circumference").innerText = `OMKRETS: ${planet.circumference}`; // prettier-ignore
-  document.getElementById("planet-distance").innerText = `KM FRÅN SOLEN: ${planet.distance}`; // prettier-ignore
-  document.getElementById("planet-maxTemp").innerText = `MAX TEMPARATUR: ${planet.temp.day}`; // prettier-ignore
-  document.getElementById("planet-minTemp").innerText = `MIN TEMPARATUR: ${planet.temp.night}`; // prettier-ignore
-  document.getElementById("planet-moons").innerText = `MÅNAR: ${planet.moons}`;
-  document.getElementById("overlay").style.display = "flex";
+  document.getElementById(
+    "planet-circumference"
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">OMKRETS:</strong> ${planet.circumference}`;
+  document.getElementById(
+    "planet-distance"
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">KM FRÅN SOLEN:</strong> ${planet.distance}`;
+  document.getElementById(
+    "planet-maxTemp"
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MAX TEMPARATUR:</strong> ${planet.temp.day}`;
+  document.getElementById(
+    "planet-minTemp"
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MIN TEMPARATUR:</strong> ${planet.temp.night}`;
+  document.getElementById(
+    "planet-moons"
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MÅNAR:</strong> ${planet.moons}`;
+  document.getElementById("overlay").style.display = "inline-block";
 };
 
 const closeOverlay = () =>
