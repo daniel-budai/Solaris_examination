@@ -21,19 +21,27 @@ const openOverlay = function (planet) {
   document.getElementById("planet-description").innerText = planet.desc;
   document.getElementById(
     "planet-circumference"
-  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">OMKRETS:</strong> ${planet.circumference}`;
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">OMKRETS</strong><br>${planet.circumference}`;
   document.getElementById(
     "planet-distance"
-  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">KM FRÅN SOLEN:</strong> ${planet.distance}`;
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">KM FRÅN SOLEN</strong><br>${planet.distance}`;
   document.getElementById(
     "planet-maxTemp"
-  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MAX TEMPARATUR:</strong> ${planet.temp.day}`;
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MAX TEMPARATUR</strong><br>${planet.temp.day}`;
   document.getElementById(
     "planet-minTemp"
-  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MIN TEMPARATUR:</strong> ${planet.temp.night}`;
-  document.getElementById(
-    "planet-moons"
-  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MÅNAR:</strong> ${planet.moons}`;
+  ).innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MIN TEMPARATUR</strong><br>${planet.temp.night}`;
+
+  document.getElementById("overlay").style.display = "inline-block";
+  const moonContainer = document.getElementById("planet-moons");
+  moonContainer.innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MÅNAR</strong><br>`;
+
+  planet.moons.forEach((moon, index) => {
+    moonContainer.innerHTML += `${moon}${
+      index < planet.moons.length - 1 ? ", " : ""
+    }`;
+  });
+
   document.getElementById("overlay").style.display = "inline-block";
 };
 

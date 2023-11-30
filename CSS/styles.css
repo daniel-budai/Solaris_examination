@@ -174,7 +174,8 @@ h2 {
 }
 
 #overlay {
-  /* overflow-y: overlay; */
+  overflow-y: overlay;
+  overflow-x: hidden;
   position: fixed;
   display: none;
   width: 100%;
@@ -224,7 +225,7 @@ h2 {
 #overlay-content {
   max-width: 640px;
   margin: auto;
-  /* transform: translateY(-80px); */
+  align-items: flex-start;
   color: white;
   font: 18px;
   font-family: "Roboto Condensed", sans-serif;
@@ -255,16 +256,39 @@ h2 {
   margin-top: 10px;
 }
 
-#overlay-content .line2 {
-  margin-top: 20px;
+#overlay-content .line2,
+#overlay-content .line1 {
+  margin-top: 10px;
   border-color: rgba(255, 255, 255, 0.205);
 }
 
-#overlay-content .planet__circumference,
-#overlay-content .planet__distance,
-#overlay-content .planet__maxTemp,
-#overlay-content .planet__minTemp,
-#overlay-content .planet__moons {
-  text-align: center;
-  margin: 10px 0;
+.column1 {
+  display: flex;
+  flex-direction: column;
+  margin-left: -10px;
+}
+
+.row1,
+.row2 {
+  display: flex;
+  line-height: 25px;
+}
+
+.planet__circumference,
+.planet__distance,
+.planet__maxTemp,
+.planet__minTemp {
+  flex: 1;
+  margin: 10px;
+}
+
+.row-moon {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.planet__moons {
+  display: flex;
+  flex-direction: column;
 }

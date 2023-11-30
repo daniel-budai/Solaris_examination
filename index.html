@@ -24,26 +24,37 @@
       <h2>SOLARIS</h2>
     </header>
     <main id="solar-system">
-      <button id="sun"></button>
-      <button id="mercury"></button>
-      <button id="venus"></button>
-      <button id="earth"></button>
-      <button id="mars"></button>
-      <button id="jupiter"></button>
-      <button id="saturn"><span id="rings-of-saturn"></span></button>
-      <button id="uranus"></button>
-      <button id="neptune"></button>
+      <button id="sun" title="Sun"></button>
+      <button id="mercury" title="Mercury"></button>
+      <button id="venus" title="Venus"></button>
+      <button id="earth" title="Earth"></button>
+      <button id="mars" title="Mars"></button>
+      <button id="jupiter" title="Jupiter"></button>
+      <button id="saturn" title="Saturn">
+        <span id="rings-of-saturn"></span>
+      </button>
+      <button id="uranus" title="Uranus"></button>
+      <button id="neptune" title="Neptune"></button>
       <div id="overlay">
         <div id="overlay-content">
           <h1 class="latin__name" id="latin-name"></h1>
           <h2 class="planet__name" id="planet-name"></h2>
           <p class="planet__description" id="planet-description"></p>
           <hr class="line2" />
-          <p class="planet__circumference" id="planet-circumference"></p>
-          <p class="planet__distance" id="planet-distance"></p>
-          <p class="planet__maxTemp" id="planet-maxTemp"></p>
-          <p class="planet__minTemp" id="planet-minTemp"></p>
-          <p class="planet__moons" id="planet-moons"></p>
+          <div class="column1">
+            <div class="row1">
+              <p class="planet__circumference" id="planet-circumference"></p>
+              <p class="planet__distance" id="planet-distance"></p>
+            </div>
+            <div class="row2">
+              <p class="planet__maxTemp" id="planet-maxTemp"></p>
+              <p class="planet__minTemp" id="planet-minTemp"></p>
+            </div>
+          </div>
+          <hr class="line1" />
+          <div class="row-moon">
+            <p class="planet__moons" id="planet-moons"></p>
+          </div>
           <button id="x">X</button>
         </div>
       </div>
