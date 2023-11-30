@@ -224,6 +224,9 @@ h2 {
   max-width: 640px; /* Adjust the maximum width as needed */
   margin: auto; /* Center the overlay */
   transform: translateY(-80px);
+  color: white;
+  font: 18px;
+  font-family: Roboto Condensed;
 }
 
 #overlay-content h1 {

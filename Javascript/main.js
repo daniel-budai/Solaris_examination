@@ -15,31 +15,17 @@ let planets = [];
 // #region Overlay
 
 const openOverlay = function (planet) {
-  console.log(planet);
-  document.getElementById("overlay").style.display = "flex";
-  document.getElementById("latin-name").innerText = planet.latinName;
-  document.getElementById("planet-name").innerText = planet.name;
+  //console.log(planet);
+  document.getElementById("latin-name").innerText = planet.name;
+  document.getElementById("planet-name").innerText = planet.latinName;
   document.getElementById("planet-description").innerText = planet.desc;
-  document.getElementById(
-    "planet-circumference"
-  ).innerText = `Circumference: ${planet.circumference}`;
-  document.getElementById(
-    "planet-distance"
-  ).innerText = `Distance: ${planet.distance}`;
-  document.getElementById(
-    "planet-maxTemp"
-  ).innerText = `Max Temperature: ${planet.maxTemp}`;
-  document.getElementById(
-    "planet-minTemp"
-  ).innerText = `Min Temperature: ${planet.minTemp}`;
-  document.getElementById("planet-moons").innerText = `Moons: ${planet.moons}`;
-
-  // Display the overlay
+  document.getElementById("planet-circumference").innerText = `OMKRETS: ${planet.circumference}`; // prettier-ignore
+  document.getElementById("planet-distance").innerText = `KM FRÅN SOLEN: ${planet.distance}`; // prettier-ignore
+  document.getElementById("planet-maxTemp").innerText = `MAX TEMPARATUR: ${planet.temp.day}`; // prettier-ignore
+  document.getElementById("planet-minTemp").innerText = `MIN TEMPARATUR: ${planet.temp.night}`; // prettier-ignore
+  document.getElementById("planet-moons").innerText = `MÅNAR: ${planet.moons}`;
   document.getElementById("overlay").style.display = "flex";
 };
-
-//const openOverlay = () =>
-//(document.getElementById("overlay").style.display = "flex");
 
 const closeOverlay = () =>
   (document.getElementById("overlay").style.display = "none");
@@ -51,27 +37,35 @@ const addClickListener = (button, callback) =>
 addClickListener(sunButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Solen"))
 );
+
 addClickListener(mercuryButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Merkurius"))
 );
+
 addClickListener(venusButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Venus"))
 );
+
 addClickListener(earthButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Jorden"))
 );
+
 addClickListener(marsButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Mars"))
 );
+
 addClickListener(jupiterButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Jupiter"))
 );
+
 addClickListener(saturnButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Saturnus"))
 );
+
 addClickListener(uranusButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Uranus"))
 );
+
 addClickListener(neptuneButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Neptunus"))
 );
@@ -108,7 +102,3 @@ async function getPlanets(key) {
 getKey()
   .then((key) => getPlanets(key))
   .then((bodies) => (planets = bodies));
-
-//get element by id
-//innertext = värde planets.circum
-//innan flex
