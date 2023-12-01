@@ -50,7 +50,6 @@ const closeOverlay = () =>
 
 const addClickListener = (button, callback) =>
   button.addEventListener("click", callback);
-// #endregion
 
 addClickListener(sunButton, () =>
   openOverlay(planets.find((planet) => planet.name === "Solen"))

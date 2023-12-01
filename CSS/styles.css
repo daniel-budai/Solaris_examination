@@ -292,3 +292,20 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+
+button[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: rgba(117, 110, 255, 0.644);
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  white-space: nowrap;
+  z-index: 2;
+  font-size: 12px;
+}
+
+button:hover::after {
+  content: "";
+  z-index: 0;
+}
