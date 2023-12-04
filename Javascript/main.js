@@ -14,6 +14,18 @@ let planets = [];
 
 // #region Overlay
 
+function generateStars() {
+  const starsContainer = document.getElementById("stars-container");
+  starsContainer.innerHTML = "";
+  const numStars = 36;
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement("div");
+    star.id = `star-${i + 1}`;
+    star.className = "star";
+    starsContainer.appendChild(star);
+  }
+}
+
 const openOverlay = function (planet) {
   //console.log(planet);
   document.getElementById("latin-name").innerText = planet.name;
@@ -41,7 +53,7 @@ const openOverlay = function (planet) {
       index < planet.moons.length - 1 ? ", " : ""
     }`;
   });
-
+  generateStars();
   document.getElementById("overlay").style.display = "inline-block";
 };
 

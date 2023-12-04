@@ -309,3 +309,157 @@ button:hover::after {
   content: "";
   z-index: 0;
 }
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  opacity: 0.9;
+  filter: blur(2px);
+}
+
+#star-1 {
+  transform: translate(14rem, 14em);
+}
+
+#star-2 {
+  transform: translate(12rem, 20em);
+}
+
+#star-3 {
+  transform: translate(19rem, 22em);
+  opacity: 0.5;
+}
+
+#star-4 {
+  transform: translate(10rem, 30em);
+}
+
+#star-5 {
+  transform: translate(9rem, 33em);
+}
+
+#star-6 {
+  transform: translate(17rem, 34em);
+}
+
+#star-7 {
+  transform: translate(20rem, 30em);
+}
+
+#star-8 {
+  transform: translate(23rem, 24em);
+}
+
+#star-9 {
+  transform: translate(26rem, 20em);
+}
+
+#star-10 {
+  transform: translate(36rem, 21em);
+}
+
+#star-11 {
+  transform: translate(40rem, 17em);
+}
+
+#star-12 {
+  transform: translate(40rem, 28em);
+}
+
+#star-13 {
+  transform: translate(41rem, 33em);
+}
+
+#star-14 {
+  transform: translate(43rem, 34em);
+}
+
+#star-15 {
+  transform: translate(50rem, 27em);
+}
+
+#star-16 {
+  transform: translate(55rem, 32em);
+}
+
+#star-17 {
+  transform: translate(62rem, 30em);
+}
+
+#star-18 {
+  transform: translate(66rem, 29em);
+}
+
+#star-19 {
+  transform: translate(61rem, 25em);
+}
+
+#star-20 {
+  transform: translate(60rem, 22em);
+}
+
+#star-21 {
+  transform: translate(62rem, 15em);
+}
+
+#star-22 {
+  transform: translate(59rem, 10em);
+}
+
+#star-23 {
+  transform: translate(66rem, 10em);
+}
+
+#star-24 {
+  transform: translate(67rem, 16em);
+}
+
+#star-25 {
+  transform: translate(73rem, 13em);
+}
+
+#star-26 {
+  transform: translate(70rem, 8em);
+}
+
+#star-27 {
+  transform: translate(68rem, 22em);
+}
+
+#star-28 {
+  transform: translate(75rem, 22em);
+}
+
+#star-29 {
+  transform: translate(72rem, 26em);
+}
+
+#star-30 {
+  transform: translate(76rem, 29em);
+}
+
+#star-31 {
+  transform: translate(79rem, 3em);
+}
+
+#star-32 {
+  transform: translate(72rem, 30em);
+}
+
+#star-33 {
+  transform: translate(70rem, 33em);
+}
+
+#star-34 {
+  transform: translate(77rem, 34em);
+}
+
+#star-35 {
+  transform: translate(77rem, 34em);
+}
+
+#star-36 {
+  transform: translate(52rem, 9em);
+}
