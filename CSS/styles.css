@@ -463,3 +463,13 @@ button:hover::after {
 #star-36 {
   transform: translate(52rem, 9em);
 }
+
+.half__planet {
+  position: fixed;
+  height: 71.875rem;
+  width: 77.875rem;
+  top: -17.625rem;
+  left: -1180px;
+  z-index: 2;
+  border-radius: 50%;
+}
