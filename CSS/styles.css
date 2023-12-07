@@ -273,12 +273,35 @@ h2 {
   line-height: 25px;
 }
 
-.planet__circumference,
-.planet__distance,
-.planet__maxTemp,
-.planet__minTemp {
+#overlay-content .planet__circumference {
   flex: 1;
   margin: 10px;
+  font-weight: 900;
+  font-family: "Secular One";
+}
+#overlay-content .planet__distance {
+  flex: 1;
+  margin: 10px;
+  font-weight: 900;
+  font-family: "Secular One";
+}
+#overlay-content .planet__maxTemp {
+  flex: 1;
+  margin: 10px;
+  font-weight: 900;
+  font-family: "Secular One";
+}
+#overlay-content .planet__minTemp {
+  flex: 1;
+  margin: 10px;
+  font-weight: 900;
+  font-family: "Secular One";
+}
+
+span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 100;
+  letter-spacing: 4px;
 }
 
 .row-moon {
@@ -290,6 +313,18 @@ h2 {
 .planet__moons {
   display: flex;
   flex-direction: column;
+}
+
+#planet-moons {
+  font-weight: 900;
+  font-family: "Secular One";
+}
+
+.moon-list {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  margin-top: 6px;
+  letter-spacing: 1px;
 }
 
 button[data-tooltip]:hover::after {

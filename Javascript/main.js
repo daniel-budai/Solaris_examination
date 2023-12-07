@@ -10,34 +10,48 @@ let uranusButton = document.getElementById("uranus");
 let neptuneButton = document.getElementById("neptune");
 let planets = [];
 
-/* comment
+/* comment 
 Hämtar innehåller i planet arrayen. och skriver ut det med .innerText planet.name - alltså namnet på planeten. name: Jorden
-alla get element by ID gör det. I javascripten style:ar jag resultatet, egentligen kan man göra det i CSS och call på det här i JS
-men jag ville testa göra det såhär för att se hur det blir. 
-Eftersom jag ville ha det identiskt till figman skapade jag en funktion för moons som sätter komma-tecken efter varje måne och en punkt
-i slutet.  Loopar igenom varje måne (moon) i arrayen planet.moons 
+alla get element by ID gör det. Sätter en br för radbrytning som i Figman och sluter den i en span tag för att sedan style:a i CSS.
+Jag valde att göra om denna function då jag tidigare style:ade CSS:en i JS, vilket kan ses som bad practise och själv upplevde jag det
+som pladdrigt och svårläst.
 End comment */
-
 const openOverlay = function (planet) {
   document.getElementById("latin-name").innerText = planet.name;
   document.getElementById("planet-name").innerText = planet.latinName;
   document.getElementById("planet-description").innerText = planet.desc;
-  document.getElementById("planet-circumference").innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">OMKRETS</strong><br>${planet.circumference}`; // prettier-ignore
-  document.getElementById("planet-distance").innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">KM FRÅN SOLEN</strong><br>${planet.distance}`; // prettier-ignore
-  document.getElementById("planet-maxTemp").innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MAX TEMPARATUR</strong><br>${planet.temp.day}`; // prettier-ignore
-  document.getElementById("planet-minTemp").innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MIN TEMPARATUR</strong><br>${planet.temp.night}`; // prettier-ignore
+  document.getElementById("planet-circumference").innerHTML = `OMKRETS<br><span>${planet.circumference}`; // prettier-ignore
+  document.getElementById("planet-distance").innerHTML = `KM FRÅN SOLEN<br><span>${planet.distance}`; // prettier-ignore
+  document.getElementById("planet-maxTemp").innerHTML = `MAX TEMPARATUR<br><span>${planet.temp.day}`; // prettier-ignore
+  document.getElementById("planet-minTemp").innerHTML = `MIN TEMPARATUR<br><span>${planet.temp.night}`; // prettier-ignore
   document.getElementById("overlay").style.display = "inline-block";
-
   const moonContainer = document.getElementById("planet-moons");
-  moonContainer.innerHTML = `<strong style="font-weight: 900; font-family: 'Secular One';">MÅNAR</strong><br>`;
-
-  planet.moons.forEach((moon, index) => {
-    moonContainer.innerHTML += `${moon}${
-      index < planet.moons.length - 1 ? ", " : "."
-    }`;
-  });
+  const moonsContent = handleMoonsContent(planet);
+  moonContainer.innerHTML = moonsContent;
   generateStars();
 };
+
+/* comment 
+Denna function var tidigare sammansluten med openOverlay. Jag har valt att göra den till en egen funktion i och med att jag utvecklade 
+den till mer avancerad funktion och då blir det lättre att underhålla och mer i samma veva mer läsvänlig. 
+Tar emot parametern planet och arrayen moons i planets. Skapar en sträng för att visa innehållet i moons. Om planeten inte har månar
+skriver den ut det annars skriver den ut planeterna med en loop, adderar en punkt i slutet, och komma-tecken mellan varje moon.
+End comment */
+const handleMoonsContent = (planet) => {
+  let moonsContent = `MÅNAR<br><span class="moon-list">`;
+  if (planet.moons.length === 0) {
+    moonsContent += `${planet.name} har inga månar.`;
+  } else {
+    planet.moons.forEach((moon, index) => {
+      moonsContent += `${index > 0 ? ", " : ""}${moon}${
+        index === planet.moons.length - 1 ? "." : ""
+      }`;
+    });
+  }
+  moonsContent += `</span>`;
+  return moonsContent;
+};
+
 /* comment
 Hanterar stjärnorna i overlay. Jag ville göra stjärnorna identiska till Figman, fick det till 36 stjärnorn, kan vara fler. ?
 Skapar 36 stjärnor med en loop. För varje iteration skapas ett nytt div-element unikt ID star.id = `star-${i + 1}`; , 
