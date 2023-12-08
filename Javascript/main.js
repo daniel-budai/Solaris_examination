@@ -68,77 +68,47 @@ const generateStars = () => {
     starsContainer.appendChild(star);
   }
 };
-
 /* comment
- closeOverlay - för att stänga ner overlay 
- Callback funktion för att öppna overlayen
+Jag har valt att göra om från tidigare kod där jag hade en callback, då jag under code review i fredags fick kritik om att koden var 
+svår att förstå. Istället delat upp koden i fler functions med callbacks. 
+Close overlay interagerar med closeButtonHandler som lyssnar på enventlister click. 
+En function som updaterar overlayen med planeter, gör container tom först, lägger sedan till halfPlanetName parametern med method 
+.add 
+planetClickHandler tar tre parametrar, knapp, planetensnamn, och halva planeten i overlayen. Sedan lyssnar den på click och använder
+.find metoden för att hitta i arrayen från API:t .name. Kallar på functions med planeten från arrayen och uppdatera med halfplanet.
 End comment */
+
+const planetContainer = document.getElementById("planet-container");
+const updatePlanetContainerStyles = (halfPlanetName) => {
+  planetContainer.className = "";
+  planetContainer.classList.add(halfPlanetName);
+};
+
+function planetClickHandler(button, planetName, halfPlanetName) {
+  button.addEventListener("click", () => {
+    const selectedPlanet = planets.find((planet) => planet.name === planetName);
+    openOverlay(selectedPlanet);
+    updatePlanetContainerStyles(halfPlanetName);
+  });
+}
 
 const closeOverlay = () => (document.getElementById("overlay").style.display = "none"); // prettier-ignore
 
-const addClickListener = (button, callback) => button.addEventListener("click", callback); // prettier-ignore
+function closeButtonHandler() {
+  closeOverlay();
+}
+document.getElementById("x").addEventListener("click", closeButtonHandler);
 
-const planetContainer = document.getElementById("planet-container"); //planetContainer fungerar som behållare planetinformationen
-
-/* comment
-Ändra klassnamnet på planet-container, nollställ classNamnet med tom sträng, sedan .add för att lägga till nya
-används för att ändra stilen  av planetContainer baserat på vilken planet som visas. 
-Lägger sedan till eventlisteners på de olika knapparna, varje clickevent ändrar stilen. Te.x om man öppnar venusButton, ändras stilen
-till venus-container. 
-Öppnar overlay med .find, är en metod för att hitta objektet i arrayen med samma namn med jämnförelseoperatorn. name: solen === "Solen" 
-anonymus functions
-End comment */
-const updatePlanetContainerStyles = (planetClassName) => {
-  planetContainer.className = "";
-  planetContainer.classList.add(planetClassName);
-};
-
-addClickListener(sunButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Solen"));
-  updatePlanetContainerStyles("sun-container");
-});
-
-addClickListener(mercuryButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Merkurius"));
-  updatePlanetContainerStyles("mercury-container");
-});
-
-addClickListener(venusButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Venus"));
-  updatePlanetContainerStyles("venus-container");
-});
-
-addClickListener(earthButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Jorden"));
-  updatePlanetContainerStyles("earth-container");
-});
-
-addClickListener(marsButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Mars"));
-  updatePlanetContainerStyles("mars-container");
-});
-
-addClickListener(jupiterButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Jupiter"));
-  updatePlanetContainerStyles("jupiter-container");
-});
-
-addClickListener(saturnButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Saturnus"));
-  updatePlanetContainerStyles("saturn-container");
-});
-
-addClickListener(uranusButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Uranus"));
-  updatePlanetContainerStyles("uranus-container");
-});
-
-addClickListener(neptuneButton, () => {
-  openOverlay(planets.find((planet) => planet.name === "Neptunus"));
-  updatePlanetContainerStyles("neptune-container");
-});
-
-addClickListener(document.getElementById("x"), closeOverlay);
+//Kallar sedan på funktionen men 3 argument, variabeln till knappen,  planet.name ===, och vilken container
+planetClickHandler(sunButton, "Solen", "sun-container");
+planetClickHandler(mercuryButton, "Merkurius", "mercury-container");
+planetClickHandler(venusButton, "Venus", "venus-container");
+planetClickHandler(earthButton, "Jorden", "earth-container");
+planetClickHandler(marsButton, "Mars", "mars-container");
+planetClickHandler(jupiterButton, "Jupiter", "jupiter-container");
+planetClickHandler(saturnButton, "Saturnus", "saturn-container");
+planetClickHandler(uranusButton, "Uranus", "uranus-container");
+planetClickHandler(neptuneButton, "Neptunus", "neptune-container");
 
 /* comment
 Skickar async POST-request till base_url med enpointen /keys för att få nycklen.
